@@ -17,7 +17,7 @@
 VAGRANTFILE_API_VERSION = "2"
 
 # define hostname
-NAME = "oracle-19c-vagrant"
+NAME = "oel64"
 
 unless Vagrant.has_plugin?("vagrant-proxyconf")
   puts 'Installing vagrant-proxyconf Plugin...'
@@ -45,7 +45,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   
   # change memory size
   config.vm.provider "virtualbox" do |v|
-    v.memory = 2048
+    v.memory = 4096
     v.name = NAME
   end
 
@@ -78,9 +78,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
        "ORACLE_BASE"         => "/opt/oracle",
        "ORACLE_HOME"         => "/opt/oracle/product/19c/dbhome_1",
        "ORACLE_SID"          => "ORCLCDB",
-       "ORACLE_PDB"          => "ORCLPDB1",
-       "ORACLE_CHARACTERSET" => "AL32UTF8",
-       "ORACLE_EDITION"      => "EE",
+       "ORACLE_PDB"          => "P4DEV12CLIN",
+       "ORACLE_CHARACTERSET" => "WE8ISO8859P15",
+       "ORACLE_EDITION"      => "SE2",
        "SYSTEM_TIMEZONE"     => SYSTEM_TIMEZONE
     }
 
